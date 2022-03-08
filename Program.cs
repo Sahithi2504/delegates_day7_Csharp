@@ -55,16 +55,16 @@ namespace delegates
 
 
 
-    public delegate void rectDelegate(int height, int width);
+    public delegate void rectDelegate(int l, int b);
     class rectangle
     {
-        public void area(int height, int width)
+        public void area(int l, int b)
         {
-            Console.WriteLine("Area is: {0}", (width * height));
+            Console.WriteLine("Area is: {0}", (b * l));
         }
-        public void perimeter(int height, int width)
+        public void perimeter(int l, int b)
         {
-            Console.WriteLine("Perimeter is: {0} ", 2 * (width + height));
+            Console.WriteLine("Perimeter is: {0} ", 2 * (b + l));
         }
 
         public static void Main(String[] args)
@@ -95,7 +95,7 @@ namespace delegates
         {
             Console.WriteLine("Subtract Result: {0}", a - b);
         }
-        
+
     }
     class Program
     {
