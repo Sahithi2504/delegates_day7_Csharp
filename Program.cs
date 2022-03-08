@@ -7,42 +7,44 @@ using System.Threading.Tasks;
 namespace delegates
 {
 
-    //public delegate void SampleDelegate(int a, int b);
-    //class MathOperations
-    //{
-    //    public void Add(int a, int b)
-    //    {
-    //        Console.WriteLine("Add Result: {0}", a + b);
-    //    }
-    //    public void Subtract(int a, int b)
-    //    {
-    //        Console.WriteLine("Subtract Result: {0}", a - b);
-    //    }
-    //    public void Multiply(int a,int b)
-    //    {
-    //        Console.WriteLine("Multiply Result: {0}",a * b);
-    //    }
-    //}
-    //class Program
-    //{
-    //    static void Main(string[] args)
-    //    {
-    //        Console.WriteLine("****Delegate Example****");
-    //        MathOperations m = new MathOperations();
+    public delegate void SampleDelegate(int a, int b);
+    class MathOperations
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine("Add Result: {0}", a + b);
+        }
+        public void Subtract(int a, int b)
+        {
+            Console.WriteLine("Subtract Result: {0}", a - b);
+        }
+        public void Multiply(int a, int b)
+        {
+            Console.WriteLine("Multiply Result: {0}", a * b);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("****Delegate Example****");
+            MathOperations m = new MathOperations();
 
-    //        SampleDelegate dlgt = m.Add;
-    //        dlgt(100, 100);
+            SampleDelegate dlgt = m.Add;
+            dlgt(100, 100);
 
-    //        dlgt = m.Subtract;
-    //        dlgt(100, 90);
+            dlgt = m.Subtract;
+            dlgt(100, 90);
 
-    //        dlgt = m.Multiply;
-    //        dlgt(10, 2);
+            dlgt = m.Multiply;
+            dlgt(10, 2);
 
-    //        Console.ReadLine();
+            Console.ReadLine();
 
-    //    }
-    // }
+        }
+    }
+
+
 
 
 
@@ -51,28 +53,33 @@ namespace delegates
 
 
 
-    //public delegate void rectDelegate(int height,int width);
-    //class rectangle
-    //{
-    //    public void area(int height, int width)
-    //    {
-    //        Console.WriteLine("Area is: {0}", (width * height));
-    //    }
-    //    public void perimeter(int height, int width)
-    //    {
-    //        Console.WriteLine("Perimeter is: {0} ", 2 * (width + height));
-    //    }
-    
-    //     public static void Main(String[] args)
-    //     {
-    //    rectangle rect = new rectangle();
-    //    rectDelegate rectdele = new rectDelegate(rect.area);
-    //    rectdele += rect.perimeter;
-    //    rectdele.Invoke(6, 4);
-    //    rectdele.Invoke(3, 3);
-    //    Console.ReadLine();
-    //     }
-    //}
+
+
+    public delegate void rectDelegate(int height, int width);
+    class rectangle
+    {
+        public void area(int height, int width)
+        {
+            Console.WriteLine("Area is: {0}", (width * height));
+        }
+        public void perimeter(int height, int width)
+        {
+            Console.WriteLine("Perimeter is: {0} ", 2 * (width + height));
+        }
+
+        public static void Main(String[] args)
+        {
+            rectangle rect = new rectangle();
+            rectDelegate rectdele = new rectDelegate(rect.area);
+            rectdele += rect.perimeter;
+            rectdele.Invoke(6, 4);
+            rectdele.Invoke(3, 3);
+            Console.ReadLine();
+        }
+    }
+
+
+
 
 
     //---------------Passing delegate as a parameter-------------
